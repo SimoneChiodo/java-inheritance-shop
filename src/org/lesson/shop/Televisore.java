@@ -20,7 +20,7 @@ public class Televisore extends Prodotto {
     this.depth = generateMesure();
 
     //Assign other values
-    this.isSmart = isSmart;
+    this.isSmart = false;
   }
   
   Televisore(String nome, String marca, BigDecimal prezzo, BigDecimal iva, Boolean isSmart, float height, float width, float depth){
