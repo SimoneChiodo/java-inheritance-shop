@@ -16,5 +16,11 @@ public class Main {
     System.out.println(televisione.getNome());
     System.out.println(televisione.getIsSmart() ? "It's smart" : "It's not smart");
 
+    Cuffie cuffie = new Cuffie("Cuffies", "Razers", new BigDecimal(60), new BigDecimal(0.22), "Black", true);
+
+    System.out.println("\nSome Headphones info: ");
+    System.out.println(cuffie.getNome());
+    System.out.println(cuffie.getColor());
+
   }
 }
