@@ -1,7 +1,6 @@
 package org.lesson.shop;
 
 import java.math.BigDecimal;
-import java.util.Random;
 
 public class Cuffie extends Prodotto {
   
