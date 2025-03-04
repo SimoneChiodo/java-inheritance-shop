@@ -68,7 +68,7 @@ public class Televisore extends Prodotto {
 
   // @Override
   public String toString(){
-    return super.toString() + "Questo dispositivo " + (getIsSmart() ? "e' smart. " : "non e' smart. ") + "Le misure sono: \n- "+ this.height + "altezza" + "\n- " + this.width + "larghezza" + "\n- " + this.depth + "profondita'.";
+    return super.toString() + "Questo dispositivo " + (getIsSmart() ? "e' smart. " : "non e' smart. ") + "Le misu1e sono: "+ this.height + "cm altezza; " + this.width + "cm larghezza; " + this.depth + "cm profondita'.";
   }
 
   // Functions
