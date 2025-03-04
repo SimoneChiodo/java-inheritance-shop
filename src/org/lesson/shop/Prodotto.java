@@ -64,6 +64,10 @@ public class Prodotto {
     this.iva = iva;
   }
 
+  public String toString(){
+    return "Questo prodotto e' un " + nome + " di " + marca + ". Costa " + prezzo + " euro + " + iva +" di IVA.";
+  }
+
   // Functions
   private int generateCode(){
     Random random = new Random();
