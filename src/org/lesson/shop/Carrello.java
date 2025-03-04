@@ -24,7 +24,7 @@ public class Carrello {
         System.out.println("\nIl valore inserito non e' accettato!");
         System.out.println("\nHai la tessera fedelta'? (Y/N)");
         choise3 = scanner.nextLine();
-        if(choise3.toLowerCase() == "y")
+        if(choise3.toLowerCase().equals("y"))
           tessera = true;
       } while(!choise3.equals("y") && !choise3.equals("n"));
       
@@ -48,7 +48,6 @@ public class Carrello {
             scanner.nextLine(); // This line consumes the \n character
 
             Smartphone smartphone = new Smartphone(nome, marca, prezzo, iva, storageAmount);
-
             if(tessera && storageAmount <= 32)
               smartphone.setPrezzo(calcolaSconto(prezzo, new BigDecimal(5)));
             else if(tessera) 
@@ -80,7 +79,7 @@ public class Carrello {
               System.out.println("\nE' una smart TV? (Y/N) ");
               isSmartString = scanner.nextLine().toLowerCase();
             } while(!isSmartString.equals("y") && !isSmartString.equals("n"));
-            boolean isSmart = isSmartString == "y" ? true : false;
+            boolean isSmart = isSmartString.equals("y") ? true : false;
             
             Televisore televisore = new Televisore(nome, marca, prezzo, iva, isSmart, height, width, depth);
 
@@ -111,7 +110,7 @@ public class Carrello {
               System.out.println("\nSono Wireless? (Y/N) ");
               isWirelessString = scanner.nextLine().toLowerCase();
             } while(!isWirelessString.equals("y") && !isWirelessString.equals("n"));
-            boolean isWireless = isWirelessString == "y" ? true : false;
+            boolean isWireless = isWirelessString.equals("y") ? true : false;
 
             Cuffie cuffie = new Cuffie(nome, marca, prezzo, iva, color, isWireless);
 
@@ -141,8 +140,8 @@ public class Carrello {
   }
 
   private static BigDecimal calcolaSconto(BigDecimal prezzo, BigDecimal scontoPercentuale){
-      BigDecimal sconto = prezzo.multiply(scontoPercentuale).divide(new BigDecimal("100"), 2, RoundingMode.HALF_UP);
-      BigDecimal prezzoScontato = prezzo.subtract(sconto);
+      BigDecimal sconto = prezzo.multiply(scontoPercentuale).divide(new BigDecimal(100));
+      BigDecimal prezzoScontato = prezzo.subtract(sconto).setScale(2, RoundingMode.HALF_UP);
       return prezzoScontato;
   }
 }
