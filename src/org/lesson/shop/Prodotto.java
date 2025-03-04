@@ -65,7 +65,7 @@ public class Prodotto {
   }
 
   public String toString(){
-    return "Questo prodotto e' un " + nome + " di " + marca + ". Costa " + prezzo + " euro + " + iva +" di IVA.";
+    return "Questo prodotto e' un " + this.nome + " di " + this.marca + ". Costa " + this.prezzo + " euro + " + this.iva +" di IVA. ";
   }
 
   // Functions

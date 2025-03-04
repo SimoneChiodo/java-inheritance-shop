@@ -43,6 +43,10 @@ public class Smartphone extends Prodotto {
     this.storageAmount = storageAmount;
   }
 
+  // @Override
+  public String toString(){
+    return super.toString() + "Il codice IMEI e' " + this.codeIMEI + " e ha " + this.storageAmount + "GB di memoria disponibile. ";
+  }
 
   // Functions
   private int generateIMEICode(){

@@ -37,4 +37,8 @@ public class Cuffie extends Prodotto {
     this.isWireless = isWireless;
   }
 
+  public String toString(){
+    return super.toString() + "Sono di colore " + this.color + " e " + (this.isWireless ? "sono wireless." : "non sono wireless.");
+  }
+
 }
