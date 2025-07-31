@@ -1,42 +1,63 @@
-### Esercizio
+# Progetto Java OOP: Shop con Prodotti e Carrello
 
-## Parte 1
+## Descrizione
 
-Creare la classe Prodotto che gestisce i prodotti dello shop.
+In questo progetto si richiede di creare una gerarchia di classi che rappresentano prodotti di uno shop, con gestione del carrello e sconti personalizzati.
 
-Un prodotto è caratterizzato da:
+---
 
-- codice (numero intero)
-- nome
-- marca
-- prezzo
-- iva
+## Esercizio 1: Classe Prodotto
 
-Usate opportunamente i livelli di accesso (public, private), i costruttori, i metodi getter e setter ed eventuali altri metodi di “utilità” per fare in modo che:
+### Attributi:
+- `codice` (int, accessibile solo in lettura)
+- `nome` (read/write)
+- `marca` (read/write)
+- `prezzo` (read/write)
+- `iva` (read/write)
 
-- il codice prodotto sia accessibile solo in lettura
-- gli altri attributi siano accessibili sia in lettura che in scrittura
+### Requisiti:
+- Costruttori opportuni
+- Getter e setter per tutti gli attributi tranne `codice` (solo getter)
+- Metodi utili come `toString()`
 
-Lo shop gestisce diversi tipi di prodotto:
+---
 
-- Smarphone, caratterizzati anche dal codice IMEI e dalla quantità di memoria
-- Televisori, caratterizzati dalle dimensioni e dalla proprietà di essere smart oppure no
-- Cuffie, caratterizzate dal colore e se sono wireless o cablate
+## Esercizio 2: Sotto-classi che ereditano da Prodotto
 
-Utilizzate l’ereditarietà per riutilizzare il codice di Prodotto nella stesura delle classi che gestiscono i vari sotto tipi di prodotto.
+### Tipi di prodotto:
+- **Smartphone:** aggiunge `imei` (String), `memoria` (int in GB)
+- **Televisore:** aggiunge `dimensioni` (int in pollici), `smart` (boolean)
+- **Cuffie:** aggiunge `colore` (String), `wireless` (boolean)
 
-## Parte 2
+Utilizza l’ereditarietà per riusare codice della classe `Prodotto`.
 
-Create una classe Carrello con metodo main, in cui chiedete all’utente di valorizzare un carrello di prodotti con dati inseriti tramite scanner.
+---
 
-Durante la richiesta di valorizzazione chiedete all’utente se sta inserendo uno Smarphone o un Televisore o Cuffie e in base alla scelta dell’utente utilizzate il costruttore opportuno.
+## Esercizio 3: Classe Carrello con `main`
 
-Al termine dell’inserimento stampate il carrello (fate l’override del metodo toString per restituire le informazioni da stampare per ogni classe)
+- Usa `Scanner` per far inserire all’utente i prodotti.
+- Chiedi che tipo di prodotto inserire (Smartphone, Televisore, Cuffie).
+- In base alla scelta, chiedi i dati specifici e crea l’oggetto corrispondente.
+- Conserva i prodotti in una lista (ad esempio `ArrayList<Prodotto>`).
+- Alla fine stampa tutti i prodotti (override di `toString()`).
 
-Bonus:
-Aggiungete alla classe Prodotto un metodo per il calcolo del prezzo scontato per clienti con tessera fedeltà, che applica al prezzo uno sconto del 2%.
-Per gli Smartphone, lo sconto è del 5% se la quantità di memoria è inferiore a 32GB, altrimenti rimane del 2%.
-Per i Televisori lo sconto è del 10% se la televisione non è smart, altrimenti rimane del 2%.
-Per le Cuffie lo sconto è del 7% se sono cablate, altrimenti rimane del 2%.
-Nella classe carrello chiedere all’utente se possiede una carta fedeltà
-In base alla risposta, calcolare il totale del carrello come somma dei prezzi base o dei prezzi scontati.
+---
+
+## Bonus: Metodo sconto fedeltà
+
+- Aggiungi nella classe `Prodotto` un metodo `calcolaPrezzoScontato()` che applica sconti diversi:
+  - Sconto base: 2%
+  - Smartphone: 5% se memoria < 32GB, altrimenti 2%
+  - Televisori: 10% se non smart, altrimenti 2%
+  - Cuffie: 7% se cablate (wireless == false), altrimenti 2%
+- In `Carrello` chiedi all’utente se possiede carta fedeltà.
+- Se sì, somma prezzi scontati, altrimenti somma prezzi base.
+
+---
+
+## Note finali
+
+- Attenzione all’incapsulamento e all’override di metodi.
+- Organizza bene il package `org.lessons.java.shop`.
+- Testa la logica di input/output con attenzione.
+- Usa `ArrayList` per gestire il carrello.
