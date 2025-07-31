@@ -6,7 +6,7 @@ In questo progetto si richiede di creare una gerarchia di classi che rappresenta
 
 ---
 
-## Esercizio 1: Classe Prodotto
+## Classe Prodotto
 
 ### Attributi:
 - `codice` (int, accessibile solo in lettura)
@@ -22,7 +22,7 @@ In questo progetto si richiede di creare una gerarchia di classi che rappresenta
 
 ---
 
-## Esercizio 2: Sotto-classi che ereditano da Prodotto
+## Sotto-classi che ereditano da Prodotto
 
 ### Tipi di prodotto:
 - **Smartphone:** aggiunge `imei` (String), `memoria` (int in GB)
@@ -33,7 +33,7 @@ Utilizza l’ereditarietà per riusare codice della classe `Prodotto`.
 
 ---
 
-## Esercizio 3: Classe Carrello con `main`
+## Classe Carrello con `main`
 
 - Usa `Scanner` per far inserire all’utente i prodotti.
 - Chiedi che tipo di prodotto inserire (Smartphone, Televisore, Cuffie).
